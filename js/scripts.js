@@ -50,4 +50,22 @@ function Clock(){
   document.getElementById("showDay").innerHTML = d;
   document.getElementById("showDate").innerHTML = date.toLocaleDateString();
   document.getElementById("tm").innerHTML = date.toLocaleTimeString();
-}
+  
+  
+  const hrHand = document.querySelector("#hours");
+  const mnHand = document.querySelector("#minutes");
+  const scHand = document.querySelector("#seconds");
+  // Getting the time values 
+  let hr = date.getHours();
+  let min = date.getMinutes();
+  let sec = date.getSeconds();
+
+  // hands positions
+  let hrPosition = hr * 360 / 12 + ((min * 360 / 60) / 12);
+  let minPosition = (min * 360 / 60) + (sec * 360 / 60) / 60;
+  let secPosition = sec * 360 / 60;
+
+  hrHand.style.transform = `rotate(${hrPosition}deg)`;
+  mnHand.style.transform = `rotate(${minPosition}deg)`;
+  scHand.style.transform = `rotate(${secPosition}deg)`;
+};
