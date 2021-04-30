@@ -38,3 +38,12 @@ section::after {
     animation: animate 5s ease-in-out infinite;
     animation-delay: -2.5s;
 }
+
+@keyframes animate {
+    0%,100%{
+        transform: translateY(30px);  
+    }
+    50%{
+        transform: translateY(-30px);  
+    }
+}
