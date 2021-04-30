@@ -31,3 +31,23 @@ window.onload = function () {
       alert(err);
     });
 };
+
+// Days-date and Time
+setInterval(Clock, 1000);
+
+function Clock(){
+  const date = new Date();
+  let weekday = new Array(7);
+  weekday[0] = "Sunday";
+  weekday[1] = "Monday";
+  weekday[2] = "Tuesday";
+  weekday[3] = "Wednesday";
+  weekday[4] = "Thursday";
+  weekday[5] = "Friday";
+  weekday[6] = "Saturday";
+
+  let d = weekday[date.getDay()];
+  document.getElementById("showDay").innerHTML = d;
+  document.getElementById("showDate").innerHTML = date.toLocaleDateString();
+  document.getElementById("tm").innerHTML = date.toLocaleTimeString();
+}
